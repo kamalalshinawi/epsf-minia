@@ -18,7 +18,7 @@ interface FooterProps {
 }
 
 export const Footer = ({
-  organizationName = 'epsf-minia',
+  organizationName = 'EPSF-MINIA',
   address = 'Faculty of Pharmacy, Minia University, Minia, Egypt',
   phone = '01024526724',
   email = 'amrgamil300@gmail.com',
@@ -26,7 +26,7 @@ export const Footer = ({
   <footer className="mt-auto bg-[#0A0F0D] text-white">
     <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
       <section aria-labelledby="footer-organization">
-        <h2 id="footer-organization" className="text-lg font-bold text-white">{organizationName}</h2>
+        <h2 id="footer-organization" className="text-xl font-extrabold uppercase tracking-wider text-white">{organizationName}</h2>
         <p className="mt-3 max-w-xs text-sm leading-6 text-white/80">Serving our community through partnership, leadership, and public engagement.</p>
       </section>
 

@@ -107,8 +107,8 @@ export const Home = (): React.JSX.Element => (
     >
       <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
         <div className="max-w-3xl motion-reduce:animate-none animate-hero-enter">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-white/80">
-            EPSF Minia
+          <p className="text-base font-extrabold uppercase tracking-[0.2em] text-white">
+            EPSF-MINIA
           </p>
           <h1
             id="home-hero-title"
