@@ -291,7 +291,7 @@ export const Home = (): React.JSX.Element => (
           {[...IMPACT_PILLARS, ...IMPACT_PILLARS].map((pillar, idx) => (
             <div
               key={`${pillar.title}-${idx}`}
-              className="flex w-72 flex-col items-center text-center rounded-2xl bg-white p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 shrink-0 group"
+              className="flex w-72 flex-col items-center text-center rounded-2xl bg-white p-6 transition-all duration-300 shrink-0 group"
             >
               <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-blue-50/80 p-3 mb-4 transition-transform duration-300 group-hover:scale-110">
                 <img src={pillar.icon} alt={pillar.title} className="h-full w-full object-contain" />
