@@ -27,7 +27,7 @@ export const Navbar = ({ organizationName = ORGANIZATION_NAME }: NavbarProps): R
       : 'text-[#1e293b] hover:text-[#0047ba]'}`
 
   return (
-    <header className="border-b border-black/5 bg-white">
+    <div className="border-b border-black/5 bg-white">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Primary navigation">
         <div className="flex h-20 items-center justify-between gap-4 py-2">
           {/* Logo & Brand title */}
@@ -89,6 +89,6 @@ export const Navbar = ({ organizationName = ORGANIZATION_NAME }: NavbarProps): R
           </div>
         )}
       </nav>
-    </header>
+    </div>
   )
 }
