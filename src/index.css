@@ -1,7 +1,6 @@
+@config "../tailwind.config.ts";
 @import "tailwindcss";
 
-@theme { --color-minia-blue: #1048bd; }
-
 @layer base {
-  body { @apply m-0 min-w-80 bg-slate-50 font-sans text-slate-900; }
+  body { @apply m-0 min-w-80 bg-background-muted font-sans text-text antialiased; }
 }
