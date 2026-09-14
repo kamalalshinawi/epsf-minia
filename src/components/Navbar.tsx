@@ -3,7 +3,7 @@ import { NavLink as RouterNavLink } from 'react-router-dom'
 import logo from '../assets/images/minia-logo.png'
 import type { NavLink } from '../types'
 
-const ORGANIZATION_NAME = 'Organization Name'
+const ORGANIZATION_NAME = 'epsf-minia'
 
 const NAVIGATION_LINKS: NavLink[] = [
   { label: 'Home', path: '/' },
