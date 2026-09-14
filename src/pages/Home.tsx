@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom'
 import publicHealthImg from '../assets/images/public-health.jpg'
 import sepProgramImg from '../assets/images/sep-program.jpg'
 import pharmacyPassionImg from '../assets/images/pharmacy-passion.jpg'
+import sdgsImg from '../assets/images/sdgs.png'
+import bloodDonationImg from '../assets/images/blood-donation.png'
+import environmentImg from '../assets/images/environment.png'
+import pharmacyBookImg from '../assets/images/pharmacy-book.png'
+import interactiveWorkshopImg from '../assets/images/interactive-workshop.png'
 
 interface HomeStat {
   value: string
@@ -19,6 +24,12 @@ interface FocusArea {
 interface StructureItem {
   title: string
   description: string
+}
+
+interface ImpactPillar {
+  title: string
+  description: string
+  icon: string
 }
 
 const STATS: HomeStat[] = [
@@ -47,6 +58,39 @@ const FOCUS_AREAS: FocusArea[] = [
     description:
       'As pharmacy students, pharmacy is our passion, we aim to empower the pharmaceutical field in Egypt, starting from the pharmacy student, presenting many educational programs and conferences with experts and providing them with training opportunities and large-scale competitions to build a strong future pharmacist!',
     image: pharmacyPassionImg,
+  },
+]
+
+const IMPACT_PILLARS: ImpactPillar[] = [
+  {
+    title: 'Sustainable Development Goals (SDGs)',
+    description:
+      'All EPSF-Minia projects are aligned with the United Nations Sustainable Development Goals to ensure global impact.',
+    icon: sdgsImg,
+  },
+  {
+    title: 'Blood Donation Campaigns',
+    description:
+      'Organizing nationwide blood donation drives to save lives and support Egyptian hospitals.',
+    icon: bloodDonationImg,
+  },
+  {
+    title: 'Environmental & Humanitarian Outreach',
+    description:
+      'Promoting sustainability, climate awareness, and community welfare programs across Minia.',
+    icon: environmentImg,
+  },
+  {
+    title: 'Pharmacy Education & Clinical Training',
+    description:
+      'Empowering pharmacy students with clinical knowledge, workshops, and expert-led training.',
+    icon: pharmacyBookImg,
+  },
+  {
+    title: 'Workshops & Interactive Competitions',
+    description:
+      'Hosting interactive webinars, national patient counseling competitions, and skill-building sessions.',
+    icon: interactiveWorkshopImg,
   },
 ]
 
@@ -198,7 +242,40 @@ export const Home = (): React.JSX.Element => (
       </div>
     </section>
 
-    {/* 5. "Our Structure" Section */}
+    {/* 5. Developing Pharmacy and Community Section */}
+    <section className="bg-white py-16 sm:py-20 border-b border-black/10">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
+            Developing <span className="text-[#0047ba]">Pharmacy</span> and Community
+          </h2>
+          <p className="mt-3 text-base text-black/70 leading-relaxed">
+            Our core initiatives driving health awareness, educational growth, and sustainable community impact in Minia.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          {IMPACT_PILLARS.map(({ title, description, icon }) => (
+            <div
+              key={title}
+              className="flex flex-col items-center text-center rounded-2xl border border-black/10 bg-white p-6 shadow-xs transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#0047ba]/40 group"
+            >
+              <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-blue-50/80 p-3 mb-5 transition-transform duration-300 group-hover:scale-110">
+                <img src={icon} alt={title} className="h-full w-full object-contain" />
+              </div>
+              <h3 className="text-base font-bold text-black mb-2 leading-snug group-hover:text-[#0047ba] transition-colors">
+                {title}
+              </h3>
+              <p className="text-xs leading-relaxed text-black/70">
+                {description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* 6. "Our Structure" Section */}
     <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10 lg:py-20">
       <div className="text-center max-w-2xl mx-auto mb-12">
         <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
@@ -224,7 +301,7 @@ export const Home = (): React.JSX.Element => (
       </div>
     </section>
 
-    {/* 6. Closing CTA Band */}
+    {/* 7. Closing CTA Band */}
     <section className="w-full bg-[#0047ba] text-center text-white py-16 sm:py-20">
       <div className="mx-auto max-w-3xl px-6">
         <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
