@@ -1,0 +1,1 @@
+export const Footer = (): React.JSX.Element => <footer className="mt-auto bg-slate-950 px-6 py-6 text-center text-sm text-slate-300">© {new Date().getFullYear()} EPSF Minia. All rights reserved.</footer>
