@@ -28,16 +28,16 @@ export const Navbar = ({ organizationName = ORGANIZATION_NAME }: NavbarProps): R
 
   return (
     <div className="border-b border-black/5 bg-white">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Primary navigation">
-        <div className="flex h-20 items-center justify-between gap-4 py-2">
+      <nav className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10" aria-label="Primary navigation">
+        <div className="flex h-24 sm:h-28 items-center justify-between gap-4 py-3">
           {/* Logo & Brand title */}
-          <RouterNavLink to="/" className="flex items-center gap-3" aria-label={`${organizationName} home`}>
+          <RouterNavLink to="/" className="flex items-center gap-3 sm:gap-4" aria-label={`${organizationName} home`}>
             <img
               src={logo}
               alt="EPSF Logo"
-              className="h-12 w-auto object-contain sm:h-14 transition-transform duration-200 hover:scale-105"
+              className="h-16 w-auto object-contain sm:h-20 lg:h-22 transition-transform duration-200 hover:scale-105"
             />
-            <span className="text-lg font-extrabold uppercase tracking-tight text-[#0047ba] sm:text-xl">
+            <span className="text-xl font-extrabold uppercase tracking-tight text-[#0047ba] sm:text-2xl lg:text-3xl">
               {organizationName}
             </span>
           </RouterNavLink>

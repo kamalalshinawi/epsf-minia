@@ -198,7 +198,7 @@ export const Home = (): React.JSX.Element => (
         </svg>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10">
           {STATS.map(({ value, valueSub, label }, idx) => {
             const curveClass = [
@@ -238,7 +238,7 @@ export const Home = (): React.JSX.Element => (
     </section>
 
     {/* 3. About EPSF-Minia Highlight Section */}
-    <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10">
+    <section className="mx-auto max-w-[1440px] px-6 py-16 sm:px-8 lg:px-10">
       <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-6 space-y-6">
           <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl leading-tight">
@@ -272,7 +272,7 @@ export const Home = (): React.JSX.Element => (
 
     {/* 4. "What We Do" Core Feature Cards Section */}
     <section className="bg-slate-50/50 py-16 sm:py-20 border-y border-black/10">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-10">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
             What We Do
@@ -311,7 +311,7 @@ export const Home = (): React.JSX.Element => (
 
     {/* 5. Developing Pharmacy and Community Section (Right-to-Left Marquee) */}
     <section className="bg-white py-16 sm:py-20 border-b border-black/10 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 mb-10 text-center">
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-10 mb-10 text-center">
         <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
           Developing <span className="text-[#0047ba]">Pharmacy</span> and Community
         </h2>
@@ -349,7 +349,7 @@ export const Home = (): React.JSX.Element => (
 
     {/* 6. Partners and Collaborations Section (Clean White Background) */}
     <section className="bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 text-center">
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-10 text-center">
         <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
           Partners <span className="text-[#0047ba]">and</span> Collaborations:
         </h2>

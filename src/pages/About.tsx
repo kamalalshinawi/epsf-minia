@@ -10,7 +10,7 @@ export const About: React.FC = () => {
         className="relative left-1/2 w-screen -translate-x-1/2 bg-[#215E99] text-white"
         aria-labelledby="about-banner-title"
       >
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10">
+        <div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-10">
           <div className="max-w-3xl">
             <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-white/80">
               EPSF-MINIA
@@ -29,7 +29,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Main Content Container */}
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10 space-y-20">
+      <div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-8 lg:px-10 space-y-20">
         
         {/* Intro Section: Welcome to EPSF-Minia */}
         <section aria-labelledby="welcome-title" className="grid gap-12 lg:grid-cols-12 lg:items-center">

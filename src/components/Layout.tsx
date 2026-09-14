@@ -9,7 +9,7 @@ export const Layout = (): React.JSX.Element => (
       <TopBanner />
       <Navbar />
     </header>
-    <main className="mx-auto w-full max-w-7xl flex-1 px-4 sm:px-6 lg:px-8 py-12">
+    <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 sm:px-6 lg:px-10 py-12">
       <Outlet />
     </main>
     <Footer />

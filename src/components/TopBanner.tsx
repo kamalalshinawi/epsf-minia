@@ -1,7 +1,7 @@
 export const TopBanner = (): React.JSX.Element => {
   return (
     <div className="bg-[#0047ba] text-white text-xs sm:text-sm">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2">
         {/* Left side: Contact info */}
         <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-center sm:justify-start">
           <a
