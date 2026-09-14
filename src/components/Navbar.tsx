@@ -7,10 +7,10 @@ const ORGANIZATION_NAME = 'EPSF-MINIA'
 
 const NAVIGATION_LINKS: NavLink[] = [
   { label: 'Home', path: '/' },
-  { label: 'About Us', path: '/about' },
-  { label: 'History', path: '/history' },
-  { label: 'Student Exchange Program', path: '/student-exchange' },
   { label: 'Events', path: '/events' },
+  { label: 'Student Exchange Program', path: '/student-exchange' },
+  { label: 'History', path: '/history' },
+  { label: 'About Us', path: '/about' },
   { label: 'Contact Us', path: '/contact' },
 ]
 
@@ -20,52 +20,71 @@ interface NavbarProps {
 
 export const Navbar = ({ organizationName = ORGANIZATION_NAME }: NavbarProps): React.JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   const linkClassName = ({ isActive }: { isActive: boolean }): string =>
-    `border-b-2 px-1 py-3 text-sm font-bold uppercase transition-colors ${isActive
-      ? 'border-[#215E99] text-[#215E99]'
-      : 'border-transparent text-black hover:border-[#215E99] hover:text-[#215E99]'}`
+    `text-sm font-bold transition-colors ${isActive
+      ? 'text-[#0047ba]'
+      : 'text-[#1e293b] hover:text-[#0047ba]'}`
 
   return (
-    <header className="border-b border-black/10 bg-white shadow-xs">
-      <nav className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8" aria-label="Primary navigation">
-        <div className="flex min-h-24 items-center justify-between gap-4 py-2">
-          <RouterNavLink to="/" className="flex items-center gap-3 text-[#215E99]" aria-label={`${organizationName} home`}>
+    <header className="border-b border-black/5 bg-white">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Primary navigation">
+        <div className="flex h-20 items-center justify-between gap-4 py-2">
+          {/* Logo & Brand title */}
+          <RouterNavLink to="/" className="flex items-center gap-3" aria-label={`${organizationName} home`}>
             <img
               src={logo}
-              alt="EPSF-MINIA Official Logo"
-              className="h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24 transition-transform duration-200 hover:scale-105"
+              alt="EPSF Logo"
+              className="h-12 w-auto object-contain sm:h-14 transition-transform duration-200 hover:scale-105"
             />
-            <span className="text-lg font-extrabold uppercase tracking-wider sm:text-xl md:text-2xl text-[#215E99]">
+            <span className="text-lg font-extrabold uppercase tracking-tight text-[#0047ba] sm:text-xl">
               {organizationName}
             </span>
           </RouterNavLink>
 
+          {/* Desktop Navigation Links */}
           <div className="hidden items-center gap-5 lg:flex lg:gap-7">
             {NAVIGATION_LINKS.map(({ label, path }) => (
-              <RouterNavLink key={path} to={path} end={path === '/'} className={linkClassName}>{label}</RouterNavLink>
+              <RouterNavLink key={path} to={path} end={path === '/'} className={linkClassName}>
+                {label}
+              </RouterNavLink>
             ))}
+            {/* Vertical Separator Line matching screenshot */}
+            <span className="h-5 w-px bg-black/15 ml-1" aria-hidden="true" />
           </div>
 
+          {/* Mobile menu toggle */}
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-sm p-2 text-[#215E99] transition-colors hover:bg-black/5 lg:hidden"
+            className="inline-flex items-center justify-center rounded-md p-2 text-[#0047ba] transition-colors hover:bg-black/5 lg:hidden"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
             aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             onClick={() => setIsMenuOpen((open) => !open)}
           >
-            <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               {isMenuOpen ? <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" /> : <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h16" />}
             </svg>
           </button>
         </div>
 
+        {/* Mobile Navigation Drawer */}
         {isMenuOpen && (
-          <div id="mobile-navigation" className="border-t border-black/10 py-2 lg:hidden">
+          <div id="mobile-navigation" className="border-t border-black/10 py-3 lg:hidden space-y-1">
             {NAVIGATION_LINKS.map(({ label, path }) => (
-              <RouterNavLink key={path} to={path} end={path === '/'} onClick={() => setIsMenuOpen(false)} className={({ isActive }) =>
-                `block border-l-2 px-4 py-3 text-sm font-bold uppercase transition-colors ${isActive ? 'border-[#215E99] bg-black/5 text-[#215E99]' : 'border-transparent text-black hover:border-[#215E99] hover:bg-black/5 hover:text-[#215E99]'}`
-              }>{label}</RouterNavLink>
+              <RouterNavLink
+                key={path}
+                to={path}
+                end={path === '/'}
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) =>
+                  `block px-4 py-2.5 text-sm font-bold transition-colors rounded-md ${
+                    isActive ? 'bg-[#0047ba]/10 text-[#0047ba]' : 'text-[#1e293b] hover:bg-black/5 hover:text-[#0047ba]'
+                  }`
+                }
+              >
+                {label}
+              </RouterNavLink>
             ))}
           </div>
         )}
