@@ -4,3 +4,17 @@
 @layer base {
   body { @apply m-0 min-w-80 bg-white font-sans text-black antialiased; }
 }
+
+@keyframes float-smooth {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float-smooth {
+  animation: float-smooth 5s ease-in-out infinite;
+}
+

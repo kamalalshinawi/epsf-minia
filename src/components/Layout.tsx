@@ -5,9 +5,11 @@ import { TopBanner } from "./TopBanner";
 
 export const Layout = (): React.JSX.Element => (
   <div className="flex min-h-screen flex-col overflow-x-hidden bg-white text-black">
-    <TopBanner />
-    <Navbar />
-    <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-12">
+    <header className="sticky top-0 z-50 w-full bg-white shadow-xs">
+      <TopBanner />
+      <Navbar />
+    </header>
+    <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 sm:px-6 lg:px-10 py-12">
       <Outlet />
     </main>
     <Footer />

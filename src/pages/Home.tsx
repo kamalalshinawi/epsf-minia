@@ -1,247 +1,377 @@
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import publicHealthImg from '../assets/images/public-health.jpg'
+import sepProgramImg from '../assets/images/sep-program.jpg'
+import pharmacyPassionImg from '../assets/images/pharmacy-passion.jpg'
+import sdgsImg from '../assets/images/sdgs.png'
+import bloodDonationImg from '../assets/images/blood-donation.png'
+import environmentImg from '../assets/images/environment.png'
+import pharmacyBookImg from '../assets/images/pharmacy-book.png'
+import interactiveWorkshopImg from '../assets/images/interactive-workshop.png'
+import charityImg from '../assets/images/charity.png'
+import skillGrowthImg from '../assets/images/skill-growth.png'
+import globalNetworkImg from '../assets/images/global-network.png'
+import fipGoalsImg from '../assets/images/fip-goals.png'
+import miniaUniversityLogo from '../assets/images/minia-university-logo.jpg'
+import syndicateLogo from '../assets/images/pharmacists-syndicate-logo.jpg'
 
 interface HomeStat {
-  value: string;
-  label: string;
+  value: string
+  valueSub?: string
+  label: string
 }
-type FocusIconName = "advocacy" | "education" | "partnership";
+
 interface FocusArea {
-  title: string;
-  description: string;
-  icon: FocusIconName;
-}
-interface StructureItem {
-  title: string;
-  description: string;
+  title: string
+  description: string
+  image: string
 }
 
-const stats: HomeStat[] = [
-  { value: "38", label: "Universities" },
-  { value: "4,000+", label: "Members" },
-  { value: "Est. 1982", label: "Established" },
-  { value: "Nationwide", label: "Reach" },
-];
+interface ImpactPillar {
+  title: string
+  description: string
+  icon: string
+}
 
-const focusAreas: FocusArea[] = [
-  {
-    title: "Advocacy and Representation",
-    description:
-      "We represent the shared interests of pharmacy students in Minia through responsible dialogue and coordinated advocacy.",
-    icon: "advocacy",
-  },
-  {
-    title: "Education and Development",
-    description:
-      "We create opportunities for professional growth, scientific learning, and skill development for pharmacy students.",
-    icon: "education",
-  },
-  {
-    title: "Partnership and Outreach",
-    description:
-      "We build constructive relationships with health institutions and local partners to serve our community.",
-    icon: "partnership",
-  },
-];
+interface PartnerItem {
+  name: string
+  subtitle: string
+  logo: string
+}
 
-const structureItems: StructureItem[] = [
-  {
-    title: "Executive Board",
-    description:
-      "The Executive Board provides strategic direction, governance, and oversight for the organization’s work.",
-  },
-  {
-    title: "Committees",
-    description:
-      "Dedicated committees develop specialist programmes and support transparent decision-making.",
-  },
-  {
-    title: "Local Branches",
-    description:
-      "Connecting national priorities with the needs and perspectives of pharmacy students across Minia.",
-  },
-];
+const STATS: HomeStat[] = [
+  { value: '38', label: 'Egyptian Universities' },
+  { value: '380+', label: 'SEPer in the last 5 years' },
+  { value: 'Serving', valueSub: '4,000+', label: 'Pharmacy students yearly' },
+  { value: '4,000+', label: 'member students' },
+  { value: 'Est. 1982', label: 'Serving Pharmacy Students Since 1982' },
+]
 
-const FocusIcon = ({ name }: { name: FocusIconName }): React.JSX.Element => {
-  const paths: Record<FocusIconName, React.JSX.Element> = {
-    advocacy: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 3v18m0-18c-2.2 0-4 1.4-4 3.2S9.8 9.5 12 9.5s4 1.4 4 3.2-1.8 3.2-4 3.2-4 1.4-4 3.2S9.8 22 12 22"
-      />
-    ),
-    education: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3 6.5 12 3l9 3.5-9 3-9-3Zm3.5 2v5.2c0 .7 2.5 2.3 5.5 2.3s5.5-1.6 5.5-2.3V8.5M21 7v6"
-      />
-    ),
-    partnership: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="m8.5 13.5 2.2 2.2a1.8 1.8 0 0 0 2.6 0l2.9-2.9m-7.7.7-1.2 1.2a1.8 1.8 0 0 1-2.6 0l-1.2-1.2a1.8 1.8 0 0 1 0-2.6l4-4a1.8 1.8 0 0 1 2.6 0l.8.8m4.6-1.3 2.5-2.5a1.8 1.8 0 0 1 2.6 0l1.2 1.2a1.8 1.8 0 0 1 0 2.6l-4.5 4.5a1.8 1.8 0 0 1-2.6 0l-2-2"
-      />
-    ),
-  };
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.7"
-      className="h-7 w-7"
-      aria-hidden="true"
-    >
-      {paths[name]}
-    </svg>
-  );
-};
+const FOCUS_AREAS: FocusArea[] = [
+  {
+    title: 'Public Health',
+    description:
+      'Public health projects aim mainly to serve Egyptian community through many aspects including awareness about many common diseases in the community, humanitarian and environmental aspects & our big project; Blood Donation campaign, all aligned with SDGs.',
+    image: publicHealthImg,
+  },
+  {
+    title: 'Student Exchange Program',
+    description:
+      'Being a part of IPSF, we aim to empower the pharmacy students nationally & internationally, the student exchange program represents a great opportunity for culture exchange and widening students’ horizon on both pharmaceutical and personal scale!',
+    image: sepProgramImg,
+  },
+  {
+    title: 'Pharmacy Education',
+    description:
+      'As pharmacy students, pharmacy is our passion, we aim to empower the pharmaceutical field in Egypt, starting from the pharmacy student, presenting many educational programs and conferences with experts and providing them with training opportunities and large-scale competitions to build a strong future pharmacist!',
+    image: pharmacyPassionImg,
+  },
+]
+
+const IMPACT_PILLARS: ImpactPillar[] = [
+  {
+    title: 'Sustainable Development Goals (SDGs)',
+    description:
+      'All EPSF-Minia projects are aligned with the United Nations Sustainable Development Goals to ensure global impact.',
+    icon: sdgsImg,
+  },
+  {
+    title: 'Blood Donation Campaigns',
+    description:
+      'Organizing nationwide blood donation drives to save lives and support Egyptian hospitals.',
+    icon: bloodDonationImg,
+  },
+  {
+    title: 'Environmental & Humanitarian Outreach',
+    description:
+      'Promoting sustainability, climate awareness, and community welfare programs across Minia.',
+    icon: environmentImg,
+  },
+  {
+    title: 'Pharmacy Education & Clinical Training',
+    description:
+      'Empowering pharmacy students with clinical knowledge, workshops, and expert-led training.',
+    icon: pharmacyBookImg,
+  },
+  {
+    title: 'Workshops & Interactive Competitions',
+    description:
+      'Hosting interactive webinars, national patient counseling competitions, and skill-building sessions.',
+    icon: interactiveWorkshopImg,
+  },
+  {
+    title: 'Humanitarian Aid & Relief',
+    description:
+      'Supporting underprivileged families, charity drives, and social welfare programs in Minia.',
+    icon: charityImg,
+  },
+  {
+    title: 'Skill Growth & Leadership',
+    description:
+      'Developing personal capacity, communication skills, and leadership for future pharmacy pioneers.',
+    icon: skillGrowthImg,
+  },
+  {
+    title: 'Global Network & Cultural Exchange',
+    description:
+      'Connecting pharmacy students internationally through IPSF exchanges and global dialogue.',
+    icon: globalNetworkImg,
+  },
+  {
+    title: 'FIP Development Goals',
+    description:
+      'Advancing pharmaceutical practice, policy, and education aligned with International Pharmaceutical Federation standards.',
+    icon: fipGoalsImg,
+  },
+]
+
+const PARTNERS: PartnerItem[] = [
+  {
+    name: 'Minia University',
+    subtitle: 'Faculty of Pharmacy',
+    logo: miniaUniversityLogo,
+  },
+  {
+    name: 'Egyptian Pharmacists Syndicate',
+    subtitle: 'Supervisory Body',
+    logo: syndicateLogo,
+  },
+]
 
 export const Home = (): React.JSX.Element => (
   <div className="-my-12">
-    <section
-      className="relative left-1/2 w-screen -translate-x-1/2 bg-[#215E99] text-white"
-      aria-labelledby="home-hero-title"
-    >
-      <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
-        <div className="max-w-3xl motion-reduce:animate-none animate-hero-enter">
-          <p className="text-base font-extrabold uppercase tracking-[0.2em] text-white">
-            EPSF-MINIA
-          </p>
-          <h1
-            id="home-hero-title"
-            className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl"
+    {/* 1. Hero Section (Full Width) */}
+    <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-b from-blue-50/60 via-white to-white py-16 sm:py-20 lg:py-24">
+      {/* Decorative concentric background rings */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
+        <div className="h-[600px] w-[600px] rounded-full border border-blue-200/60" />
+        <div className="absolute h-[450px] w-[450px] rounded-full border border-blue-200/60" />
+        <div className="absolute h-[300px] w-[300px] rounded-full border border-blue-200/60" />
+      </div>
+
+      <div className="relative mx-auto max-w-5xl px-6 text-center">
+        <h1 className="text-4xl font-extrabold tracking-tight text-black sm:text-5xl lg:text-6xl">
+          We Are <span className="text-[#0047ba]">EPSF-Minia</span>
+          <span className="block mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-black/90">
+            Pharmacy Is Our Passion
+          </span>
+        </h1>
+
+        <p className="mx-auto mt-6 max-w-3xl text-base sm:text-lg leading-relaxed text-black/75">
+          EPSF-Minia is the local chapter of the Egyptian Pharmaceutical Students' Federation (EPSF) at Minia University, proudly representing one of the 38 universities that make up Egypt's largest student organization. As part of a full member federation of the International Pharmaceutical Students' Federation (IPSF), operating under the supervision of the Pharmacists' Syndicate, EPSF-Minia shares the same mission of serving both the pharmacy student and the local community — brought to life through pharmacy education conferences, public health projects, and the Student Exchange Program (SEP).
+        </p>
+
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
+          <Link
+            to="/about"
+            className="inline-flex items-center justify-center rounded-md bg-[#0047ba] px-7 py-3.5 text-sm font-bold text-white shadow-md transition-all hover:bg-[#003896] hover:shadow-lg"
           >
-            Egyptian Pharmaceutical Students' Federation - Minia
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-white/90">
-            Bringing pharmacy students and health institutions together to advance healthcare, leadership, and public engagement in Minia.
+            Learn More
+          </Link>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center rounded-md border border-black/20 bg-white px-7 py-3.5 text-sm font-bold text-black shadow-xs transition-all hover:bg-black/5"
+          >
+            Contact Us
+          </Link>
+        </div>
+      </div>
+    </section>
+
+    {/* 2. Stats / Highlights Row — Curved Circular White Bubbles */}
+    <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white py-16 sm:py-24 border-b border-black/5">
+      {/* Decorative background ring behind bubbles */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+        <div className="h-[750px] w-[750px] rounded-full border border-blue-300" />
+        <div className="absolute h-[550px] w-[550px] rounded-full border border-blue-300" />
+      </div>
+
+      {/* Decorative SVG curve path guiding the bubble arc */}
+      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 hidden lg:flex justify-center pointer-events-none opacity-40">
+        <svg className="w-full max-w-6xl h-48 text-[#0047ba]/25 overflow-visible" viewBox="0 0 1000 200" fill="none">
+          <path
+            d="M 60,160 Q 500,-10 940,160"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeDasharray="6 6"
+          />
+        </svg>
+      </div>
+
+      <div className="relative mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10">
+          {STATS.map(({ value, valueSub, label }, idx) => {
+            const curveClass = [
+              'lg:translate-y-8 sm:translate-y-4',
+              'lg:translate-y-1 sm:translate-y-1',
+              'lg:-translate-y-8 sm:-translate-y-4',
+              'lg:translate-y-1 sm:translate-y-1',
+              'lg:translate-y-8 sm:translate-y-4',
+            ][idx % 5]
+
+            const animDelay = `${(idx * 0.8).toFixed(1)}s`
+
+            return (
+              <div
+                key={label}
+                style={{ animationDelay: animDelay }}
+                className={`animate-float-smooth ${curveClass} flex h-40 w-40 sm:h-44 sm:w-44 lg:h-48 lg:w-48 flex-col items-center justify-center rounded-full border border-blue-100/80 bg-white p-4 text-center shadow-lg shadow-blue-900/10 transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-[#0047ba]/20 hover:border-[#0047ba]/40 shrink-0 z-10 cursor-pointer`}
+              >
+                {valueSub ? (
+                  <>
+                    <span className="text-sm sm:text-base font-extrabold text-black leading-none">{value}</span>
+                    <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0047ba] mt-1">{valueSub}</span>
+                  </>
+                ) : (
+                  <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-black">
+                    {value}
+                  </span>
+                )}
+                <span className="mt-1.5 text-[11px] sm:text-xs font-semibold leading-tight text-black/75 max-w-[130px]">
+                  {label}
+                </span>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+
+    {/* 3. About EPSF-Minia Highlight Section */}
+    <section className="mx-auto max-w-[1440px] px-6 py-16 sm:px-8 lg:px-10">
+      <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+        <div className="lg:col-span-6 space-y-6">
+          <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl leading-tight">
+            About EPSF-Minia: <br className="hidden sm:inline" />
+            <span className="text-[#0047ba]">Shaping the Future of Pharmacy Education</span>
+          </h2>
+          <p className="text-base leading-relaxed text-black/80">
+            Through EPSF-Minia, we bring EPSF's programs to life at the local level — delivering pharmacy education initiatives and facilitating the Students' Exchange Program (SEP) for our fellow students, while contributing to public health projects and awareness campaigns that serve the wider community in Minia. Every initiative we undertake is aligned with the Sustainable Development Goals (SDGs) and the development goals of the International Pharmaceutical Federation (FIP), reflecting EPSF's national commitment to global standards of impact.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div>
             <Link
               to="/about"
-              className="inline-flex items-center justify-center rounded-sm bg-white px-6 py-3 text-sm font-bold text-[#215E99] transition-colors hover:bg-white/90"
+              className="inline-flex items-center justify-center rounded-md bg-[#0047ba] px-6 py-3 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#003896]"
             >
               Learn More
             </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-sm border border-white px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-white/10"
-            >
-              Contact Us
-            </Link>
+          </div>
+        </div>
+
+        <div className="lg:col-span-6 flex justify-center">
+          <div className="overflow-hidden rounded-2xl border border-black/10 bg-white p-3 shadow-lg max-w-lg w-full">
+            <img
+              src={pharmacyPassionImg}
+              alt="EPSF-Minia Pharmacy Education"
+              className="w-full h-72 object-cover rounded-xl"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <section
-      className="mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-10"
-      aria-label="Organization highlights"
-    >
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {stats.map(({ value, label }) => (
-          <article
-            key={label}
-            className="border border-black/10 bg-white px-6 py-6 text-center shadow-sm"
-          >
-            <p className="text-3xl font-bold tracking-tight text-[#215E99]">
-              {value}
-            </p>
-            <p className="mt-2 text-sm font-medium text-black/70">{label}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section className="bg-white border-y border-black/10" aria-labelledby="what-we-do-title">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10 lg:py-20">
-        <div className="max-w-2xl">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#215E99]">
-            Our work
-          </p>
-          <h2
-            id="what-we-do-title"
-            className="mt-3 text-3xl font-bold tracking-tight text-black sm:text-4xl"
-          >
+    {/* 4. "What We Do" Core Feature Cards Section */}
+    <section className="bg-slate-50/50 py-16 sm:py-20 border-y border-black/10">
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-10">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
             What We Do
           </h2>
-          <p className="mt-4 leading-7 text-black/70">
-            Our core areas of work guide how we serve pharmacy students, healthcare partners, and the community.
+          <p className="mt-3 text-base text-black/70">
+            Serving pharmacy students and our local community through education, health campaigns, and international exchange.
           </p>
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {focusAreas.map(({ title, description, icon }) => (
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {FOCUS_AREAS.map(({ title, description, image }) => (
             <article
               key={title}
-              className="border border-black/10 bg-white p-7 shadow-sm"
+              className="flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-md transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#215E99] text-white">
-                <FocusIcon name={icon} />
+              <div className="h-56 w-full overflow-hidden bg-black/5">
+                <img
+                  src={image}
+                  alt={title}
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                />
               </div>
-              <h3 className="mt-6 text-xl font-bold text-[#215E99]">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-black/80">
-                {description}
-              </p>
+              <div className="flex flex-1 flex-col justify-between bg-[#0047ba] p-6 text-white">
+                <div>
+                  <h3 className="text-xl font-bold text-white">{title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/90">
+                    {description}
+                  </p>
+                </div>
+              </div>
             </article>
           ))}
         </div>
       </div>
     </section>
 
-    <section
-      className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10 lg:py-20"
-      aria-labelledby="structure-title"
-    >
-      <div className="max-w-2xl">
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#215E99]">
-          Governance
-        </p>
-        <h2
-          id="structure-title"
-          className="mt-3 text-3xl font-bold tracking-tight text-black sm:text-4xl"
-        >
-          Our Structure
+    {/* 5. Developing Pharmacy and Community Section (Right-to-Left Marquee) */}
+    <section className="bg-white py-16 sm:py-20 border-b border-black/10 overflow-hidden">
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-10 mb-10 text-center">
+        <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
+          Developing <span className="text-[#0047ba]">Pharmacy</span> and Community
         </h2>
+        <p className="mt-3 text-base text-black/70 max-w-2xl mx-auto leading-relaxed">
+          Our core initiatives driving health awareness, educational growth, and sustainable community impact in Minia.
+        </p>
       </div>
-      <div className="mt-10 grid divide-y divide-black/10 border-y border-black/10 md:grid-cols-3 md:divide-x md:divide-y-0">
-        {structureItems.map(({ title, description }) => (
-          <article
-            key={title}
-            className="px-0 py-7 md:px-7 md:py-2 first:md:pl-0 last:md:pr-0"
-          >
-            <h3 className="text-xl font-bold text-[#215E99]">{title}</h3>
-            <p className="mt-3 text-sm leading-6 text-black/80">
-              {description}
-            </p>
-          </article>
-        ))}
+
+      {/* Marquee Ticker Container */}
+      <div className="relative w-full overflow-hidden">
+        {/* Gradient edge masks for smooth fade */}
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white to-transparent" />
+
+        <div className="flex w-max animate-marquee space-x-6 hover:[animation-play-state:paused] py-4">
+          {[...IMPACT_PILLARS, ...IMPACT_PILLARS].map((pillar, idx) => (
+            <div
+              key={`${pillar.title}-${idx}`}
+              className="flex w-72 flex-col items-center text-center rounded-2xl bg-white p-6 transition-all duration-300 shrink-0 group"
+            >
+              <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-blue-50/80 p-3 mb-4 transition-transform duration-300 group-hover:scale-110">
+                <img src={pillar.icon} alt={pillar.title} className="h-full w-full object-contain" />
+              </div>
+              <h3 className="text-sm font-bold text-black mb-2 leading-snug group-hover:text-[#0047ba] transition-colors line-clamp-2">
+                {pillar.title}
+              </h3>
+              <p className="text-xs leading-relaxed text-black/70 line-clamp-3">
+                {pillar.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
-    <section
-      className="w-full mb-10 bg-[#215E99] text-center text-white"
-      aria-labelledby="contact-cta-title"
-    >
-      <div className="mx-auto max-w-3xl px-6 py-16 sm:px-8 lg:py-20">
-        <h2
-          id="contact-cta-title"
-          className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
-        >
-          Let’s Start a Conversation
+    {/* 6. Partners and Collaborations Section (Clean White Background) */}
+    <section className="bg-white py-16 sm:py-20">
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-10 text-center">
+        <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
+          Partners <span className="text-[#0047ba]">and</span> Collaborations:
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl leading-7 text-white/90">
-          Contact our team to learn more about EPSF Minia and ways to connect with our work.
+        <p className="mt-3 text-base text-black/70 max-w-2xl mx-auto leading-relaxed">
+          A section dedicated to organizations and institutions working with EPSF-Minia.
         </p>
-        <Link
-          to="/contact"
-          className="mt-8 inline-flex items-center justify-center rounded-sm bg-white px-6 py-3 text-sm font-bold text-[#215E99] transition-colors hover:bg-white/90"
-        >
-          Contact Us
-        </Link>
+
+        <div className="mt-12 flex flex-wrap justify-center items-center gap-8 sm:gap-12 lg:gap-16">
+          {PARTNERS.map(({ name, subtitle, logo }) => (
+            <div
+              key={name}
+              className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white border border-black/10 shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-1 w-64 group"
+            >
+              <div className="h-28 w-28 flex items-center justify-center mb-4 overflow-hidden rounded-full p-2 bg-slate-50 border border-black/5 group-hover:scale-105 transition-transform">
+                <img src={logo} alt={name} className="h-full w-full object-contain rounded-full" />
+              </div>
+              <h3 className="text-base font-bold text-black group-hover:text-[#0047ba] transition-colors">{name}</h3>
+              <p className="text-xs text-black/60 font-medium mt-1">{subtitle}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   </div>
-);
+)

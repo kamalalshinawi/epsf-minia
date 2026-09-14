@@ -7,10 +7,10 @@ export const About: React.FC = () => {
     <div className="-my-12">
       {/* 1. Page Header/Banner */}
       <section
-        className="relative left-1/2 w-screen -translate-x-1/2 bg-[#215E99] text-white"
+        className="relative left-1/2 w-screen -translate-x-1/2 bg-[#0047ba] text-white"
         aria-labelledby="about-banner-title"
       >
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10">
+        <div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-10">
           <div className="max-w-3xl">
             <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-white/80">
               EPSF-MINIA
@@ -29,16 +29,16 @@ export const About: React.FC = () => {
       </section>
 
       {/* Main Content Container */}
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10 space-y-20">
+      <div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-8 lg:px-10 space-y-20">
         
         {/* Intro Section: Welcome to EPSF-Minia */}
         <section aria-labelledby="welcome-title" className="grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-block rounded-md bg-[#215E99]/10 px-3 py-1 text-xs font-bold text-[#215E99] uppercase tracking-wider">
+            <div className="inline-block rounded-md bg-[#0047ba]/10 px-3 py-1 text-xs font-bold text-[#0047ba] uppercase tracking-wider">
               Local Chapter
             </div>
             <h2 id="welcome-title" className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
-              Welcome to <span className="text-[#215E99]">EPSF-Minia</span>
+              Welcome to <span className="text-[#0047ba]">EPSF-Minia</span>
             </h2>
             <p className="text-base leading-relaxed text-black/80">
               EPSF-Minia is the local chapter of the Egyptian Pharmaceutical Students' Federation (EPSF) at Minia University. As an integral part of this non-profit, non-political, and non-religious student organization, EPSF-Minia operates in full alignment with EPSF's mission, vision, and core values, building on the voluntary efforts of pharmacy students dedicated to service and growth.
@@ -51,7 +51,7 @@ export const About: React.FC = () => {
             </p>
           </div>
           <div className="lg:col-span-6 flex justify-center">
-            <div className="group relative overflow-hidden rounded-2xl border border-[#215E99]/20 bg-white p-4 max-w-xl lg:max-w-2xl w-full shadow-lg transition-all duration-500 motion-reduce:animate-none animate-float hover:shadow-2xl hover:border-[#215E99]/60 hover:scale-[1.03]">
+            <div className="group relative overflow-hidden rounded-2xl border border-[#0047ba]/20 bg-white p-4 max-w-xl lg:max-w-2xl w-full shadow-lg transition-all duration-500 motion-reduce:animate-none animate-float hover:shadow-2xl hover:border-[#0047ba]/60 hover:scale-[1.03]">
               <img
                 src={pharmacyPassionImg}
                 alt="Pharmacy is our passion"
@@ -65,7 +65,7 @@ export const About: React.FC = () => {
         <section aria-labelledby="vision-title" className="border-t border-black/10 pt-14">
           <div className="flex items-baseline gap-4 mb-4">
             <span className="text-4xl font-black text-black/20">01</span>
-            <h2 id="vision-title" className="text-3xl font-extrabold text-[#215E99]">
+            <h2 id="vision-title" className="text-3xl font-extrabold text-[#0047ba]">
               Vision
             </h2>
           </div>
@@ -80,7 +80,7 @@ export const About: React.FC = () => {
         <section aria-labelledby="mission-title" className="border-t border-black/10 pt-14">
           <div className="flex items-baseline gap-4 mb-6">
             <span className="text-4xl font-black text-black/20">02</span>
-            <h2 id="mission-title" className="text-3xl font-extrabold text-[#215E99]">
+            <h2 id="mission-title" className="text-3xl font-extrabold text-[#0047ba]">
               Mission
             </h2>
           </div>
@@ -97,7 +97,7 @@ export const About: React.FC = () => {
                 "Establishing a platform for dialogue between EPSF and other student organizations & NGOs.",
               ].map((item, idx) => (
                 <li key={idx} className="flex gap-3 items-start">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#215E99] text-xs font-bold text-white mt-0.5">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0047ba] text-xs font-bold text-white mt-0.5">
                     ✓
                   </span>
                   <span className="text-base text-black/80 leading-relaxed">{item}</span>
@@ -114,7 +114,7 @@ export const About: React.FC = () => {
             <div>
               <div className="flex items-baseline gap-4 mb-4">
                 <span className="text-3xl font-black text-black/20">03</span>
-                <h3 className="text-2xl font-extrabold text-[#215E99]">EPSF Values</h3>
+                <h3 className="text-2xl font-extrabold text-[#0047ba]">EPSF Values</h3>
               </div>
               <ul className="space-y-4">
                 {[
@@ -123,7 +123,7 @@ export const About: React.FC = () => {
                   "Noblest things come from nameless hands and remain unseen.",
                 ].map((val, i) => (
                   <li key={i} className="flex items-center gap-3 text-base font-semibold text-black/90">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#215E99]" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#0047ba]" />
                     <span>{val}</span>
                   </li>
                 ))}
@@ -136,7 +136,7 @@ export const About: React.FC = () => {
             <div>
               <div className="flex items-baseline gap-4 mb-4">
                 <span className="text-3xl font-black text-black/20">04</span>
-                <h3 className="text-2xl font-extrabold text-[#215E99]">EPSF Morals</h3>
+                <h3 className="text-2xl font-extrabold text-[#0047ba]">EPSF Morals</h3>
               </div>
               <ul className="space-y-4">
                 {[
@@ -146,7 +146,7 @@ export const About: React.FC = () => {
                   "We believe in our potentials.",
                 ].map((moral, i) => (
                   <li key={i} className="flex items-center gap-3 text-base font-semibold text-black/90">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#215E99]" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#0047ba]" />
                     <span>{moral}</span>
                   </li>
                 ))}
@@ -159,7 +159,7 @@ export const About: React.FC = () => {
         <section aria-labelledby="org-profile-title" className="border-t border-black/10 pt-14">
           <div className="flex items-baseline gap-4 mb-6">
             <span className="text-4xl font-black text-black/20">05</span>
-            <h2 id="org-profile-title" className="text-3xl font-extrabold text-[#215E99]">
+            <h2 id="org-profile-title" className="text-3xl font-extrabold text-[#0047ba]">
               Organizational Profile
             </h2>
           </div>
@@ -169,21 +169,21 @@ export const About: React.FC = () => {
 
           <div className="grid gap-6 md:grid-cols-3">
             <article className="border border-black/10 bg-white p-7 rounded-2xl shadow-xs">
-              <h3 className="text-xl font-bold text-[#215E99]">Executive Board</h3>
+              <h3 className="text-xl font-bold text-[#0047ba]">Executive Board</h3>
               <p className="mt-3 text-sm leading-relaxed text-black/80">
                 The Executive Board of EPSF-Minia leads the strategic direction, operational planning, and governance of all local operations, ensuring full compliance with the EPSF Constitution and General Assembly mandates.
               </p>
             </article>
 
             <article className="border border-black/10 bg-white p-7 rounded-2xl shadow-xs">
-              <h3 className="text-xl font-bold text-[#215E99]">Standing Committees</h3>
+              <h3 className="text-xl font-bold text-[#0047ba]">Standing Committees</h3>
               <p className="mt-3 text-sm leading-relaxed text-black/80">
                 Specialized standing committees execute targeted programs including Professional Development, Public Health, Pharmacy Education, SEP, Social & Cultural Activities, and Media & Communication.
               </p>
             </article>
 
             <article className="border border-black/10 bg-white p-7 rounded-2xl shadow-xs">
-              <h3 className="text-xl font-bold text-[#215E99]">Local Branches & Members</h3>
+              <h3 className="text-xl font-bold text-[#0047ba]">Local Branches & Members</h3>
               <p className="mt-3 text-sm leading-relaxed text-black/80">
                 Connecting EPSF national goals with pharmacy students across Minia University, empowering hundreds of student volunteers to lead local health campaigns and professional initiatives.
               </p>
@@ -194,7 +194,7 @@ export const About: React.FC = () => {
         {/* EPSF-Minia Board Section */}
         <section aria-labelledby="board-title" className="border-t border-black/10 pt-14">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 id="board-title" className="text-3xl font-extrabold text-[#215E99]">
+            <h2 id="board-title" className="text-3xl font-extrabold text-[#0047ba]">
               EPSF-Minia Board
             </h2>
             <p className="mt-2 text-sm text-black/70">
@@ -211,7 +211,7 @@ export const About: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl font-extrabold text-[#215E99]">Mr. Amr Gamil</h3>
+              <h3 className="text-xl font-extrabold text-[#0047ba]">Mr. Amr Gamil</h3>
               <p className="mt-1 text-sm font-semibold text-black/70">EPSF-Minia President</p>
             </div>
           </div>
