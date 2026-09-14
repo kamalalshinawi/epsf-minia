@@ -126,12 +126,6 @@ export const TopBanner = (): React.JSX.Element => {
               </a>
             </div>
           </div>
-
-          <span className="text-white/30 hidden sm:inline">|</span>
-
-          <a href="#" className="font-semibold text-xs sm:text-sm hover:underline transition-all">
-            Login / Register
-          </a>
         </div>
       </div>
     </div>

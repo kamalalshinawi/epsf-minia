@@ -178,36 +178,61 @@ export const Home = (): React.JSX.Element => (
       </div>
     </section>
 
-    {/* 2. Stats / Highlights Row — Circular White Bubbles */}
-    <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-b from-white via-blue-50/20 to-white py-12 border-b border-black/5">
-      {/* Decorative background ring behind bubbles matching reference */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-25 pointer-events-none">
-        <div className="h-[700px] w-[700px] rounded-full border border-blue-300" />
-        <div className="absolute h-[500px] w-[500px] rounded-full border border-blue-300" />
+    {/* 2. Stats / Highlights Row — Curved Circular White Bubbles */}
+    <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white py-16 sm:py-24 border-b border-black/5">
+      {/* Decorative background ring behind bubbles */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+        <div className="h-[750px] w-[750px] rounded-full border border-blue-300" />
+        <div className="absolute h-[550px] w-[550px] rounded-full border border-blue-300" />
+      </div>
+
+      {/* Decorative SVG curve path guiding the bubble arc */}
+      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 hidden lg:flex justify-center pointer-events-none opacity-40">
+        <svg className="w-full max-w-6xl h-48 text-[#0047ba]/25 overflow-visible" viewBox="0 0 1000 200" fill="none">
+          <path
+            d="M 60,160 Q 500,-10 940,160"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeDasharray="6 6"
+          />
+        </svg>
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10">
-          {STATS.map(({ value, valueSub, label }) => (
-            <div
-              key={label}
-              className="flex h-40 w-40 sm:h-44 sm:w-44 lg:h-48 lg:w-48 flex-col items-center justify-center rounded-full border border-slate-100 bg-white p-4 text-center shadow-lg shadow-blue-900/5 transition-all duration-300 hover:scale-105 hover:shadow-xl shrink-0"
-            >
-              {valueSub ? (
-                <>
-                  <span className="text-sm sm:text-base font-extrabold text-black leading-none">{value}</span>
-                  <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-black mt-1">{valueSub}</span>
-                </>
-              ) : (
-                <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-black">
-                  {value}
+          {STATS.map(({ value, valueSub, label }, idx) => {
+            const curveClass = [
+              'lg:translate-y-8 sm:translate-y-4',
+              'lg:translate-y-1 sm:translate-y-1',
+              'lg:-translate-y-8 sm:-translate-y-4',
+              'lg:translate-y-1 sm:translate-y-1',
+              'lg:translate-y-8 sm:translate-y-4',
+            ][idx % 5]
+
+            const animDelay = `${(idx * 0.8).toFixed(1)}s`
+
+            return (
+              <div
+                key={label}
+                style={{ animationDelay: animDelay }}
+                className={`animate-float-smooth ${curveClass} flex h-40 w-40 sm:h-44 sm:w-44 lg:h-48 lg:w-48 flex-col items-center justify-center rounded-full border border-blue-100/80 bg-white p-4 text-center shadow-lg shadow-blue-900/10 transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-[#0047ba]/20 hover:border-[#0047ba]/40 shrink-0 z-10 cursor-pointer`}
+              >
+                {valueSub ? (
+                  <>
+                    <span className="text-sm sm:text-base font-extrabold text-black leading-none">{value}</span>
+                    <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0047ba] mt-1">{valueSub}</span>
+                  </>
+                ) : (
+                  <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-black">
+                    {value}
+                  </span>
+                )}
+                <span className="mt-1.5 text-[11px] sm:text-xs font-semibold leading-tight text-black/75 max-w-[130px]">
+                  {label}
                 </span>
-              )}
-              <span className="mt-1.5 text-[11px] sm:text-xs font-semibold leading-tight text-black/75 max-w-[130px]">
-                {label}
-              </span>
-            </div>
-          ))}
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
