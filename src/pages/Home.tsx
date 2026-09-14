@@ -12,6 +12,8 @@ import charityImg from '../assets/images/charity.png'
 import skillGrowthImg from '../assets/images/skill-growth.png'
 import globalNetworkImg from '../assets/images/global-network.png'
 import fipGoalsImg from '../assets/images/fip-goals.png'
+import miniaUniversityLogo from '../assets/images/minia-university-logo.jpg'
+import syndicateLogo from '../assets/images/pharmacists-syndicate-logo.jpg'
 
 interface HomeStat {
   value: string
@@ -34,6 +36,12 @@ interface ImpactPillar {
   title: string
   description: string
   icon: string
+}
+
+interface PartnerItem {
+  name: string
+  subtitle: string
+  logo: string
 }
 
 const STATS: HomeStat[] = [
@@ -137,6 +145,19 @@ const STRUCTURE_ITEMS: StructureItem[] = [
     title: 'Local Branches & Members',
     description:
       'Empowering over 300 member students and pharmacy graduates across Minia University to lead local impact campaigns and nationwide events.',
+  },
+]
+
+const PARTNERS: PartnerItem[] = [
+  {
+    name: 'Minia University',
+    subtitle: 'Faculty of Pharmacy',
+    logo: miniaUniversityLogo,
+  },
+  {
+    name: 'Egyptian Pharmacists Syndicate',
+    subtitle: 'Supervisory Body',
+    logo: syndicateLogo,
   },
 ]
 
@@ -334,7 +355,34 @@ export const Home = (): React.JSX.Element => (
       </div>
     </section>
 
-    {/* 7. Closing CTA Band */}
+    {/* 7. Partners and Collaborations Section */}
+    <section className="bg-slate-50/60 py-16 sm:py-20 border-t border-black/10">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 text-center">
+        <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
+          Partners <span className="text-[#0047ba]">and</span> Collaborations:
+        </h2>
+        <p className="mt-3 text-base text-black/70 max-w-2xl mx-auto leading-relaxed">
+          A section dedicated to organizations and institutions working with EPSF-Minia.
+        </p>
+
+        <div className="mt-12 flex flex-wrap justify-center items-center gap-8 sm:gap-12 lg:gap-16">
+          {PARTNERS.map(({ name, subtitle, logo }) => (
+            <div
+              key={name}
+              className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white border border-black/10 shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-1 w-64 group"
+            >
+              <div className="h-28 w-28 flex items-center justify-center mb-4 overflow-hidden rounded-full p-2 bg-slate-50 border border-black/5 group-hover:scale-105 transition-transform">
+                <img src={logo} alt={name} className="h-full w-full object-contain rounded-full" />
+              </div>
+              <h3 className="text-base font-bold text-black group-hover:text-[#0047ba] transition-colors">{name}</h3>
+              <p className="text-xs text-black/60 font-medium mt-1">{subtitle}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* 8. Closing CTA Band */}
     <section className="w-full bg-[#0047ba] text-center text-white py-16 sm:py-20">
       <div className="mx-auto max-w-3xl px-6">
         <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
