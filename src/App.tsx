@@ -8,7 +8,7 @@ import { Home } from './pages/Home'
 import { StudentExchange } from './pages/StudentExchange'
 
 const App = (): React.JSX.Element => (
-  <BrowserRouter><Routes><Route element={<Layout />}>
+  <BrowserRouter basename={import.meta.env.BASE_URL}><Routes><Route element={<Layout />}>
     <Route index element={<Home />} />
     <Route path="events" element={<Events />} />
     <Route path="about" element={<About />} />

@@ -30,7 +30,7 @@ export const Navbar = ({ organizationName = ORGANIZATION_NAME }: NavbarProps): R
       <nav className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8" aria-label="Primary navigation">
         <div className="flex min-h-20 items-center justify-between gap-4">
           <RouterNavLink to="/" className="flex items-center gap-3 text-primary" aria-label={`${organizationName} home`}>
-            <img src={logo} alt="" className="h-10 w-10 object-contain" />
+            <img src={logo} alt="" className="h-12 w-12 object-contain sm:h-14 sm:w-14" />
             <span className="text-base font-bold tracking-tight sm:text-lg">{organizationName}</span>
           </RouterNavLink>
 
