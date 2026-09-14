@@ -51,11 +51,11 @@ export const About: React.FC = () => {
             </p>
           </div>
           <div className="lg:col-span-5 flex justify-center">
-            <div className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-md p-3 max-w-md w-full">
+            <div className="group relative overflow-hidden rounded-2xl border border-[#215E99]/20 bg-white p-3 max-w-md w-full shadow-lg transition-all duration-500 motion-reduce:animate-none animate-float hover:shadow-2xl hover:border-[#215E99]/60 hover:scale-[1.03]">
               <img
                 src={pharmacyPassionImg}
                 alt="Pharmacy is our passion"
-                className="w-full h-auto object-cover rounded-xl"
+                className="w-full h-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           </div>

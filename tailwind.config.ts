@@ -15,9 +15,14 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(12px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
       },
       animation: {
         'hero-enter': 'hero-enter 500ms ease-out both',
+        float: 'float 4s ease-in-out infinite',
       },
     },
   },
