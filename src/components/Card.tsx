@@ -8,7 +8,7 @@ export const Card = ({
   className = "",
 }: CardProps): React.JSX.Element => (
   <article
-    className={`rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-200 ${className}`}
+    className={`rounded-xl bg-white p-6 shadow-sm ring-1 ring-black/10 text-black ${className}`}
   >
     {children}
   </article>

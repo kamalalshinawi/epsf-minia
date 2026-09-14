@@ -22,14 +22,14 @@ export const Navbar = ({ organizationName = ORGANIZATION_NAME }: NavbarProps): R
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const linkClassName = ({ isActive }: { isActive: boolean }): string =>
     `border-b-2 px-1 py-3 text-sm font-semibold transition-colors ${isActive
-      ? 'border-secondary text-primary'
-      : 'border-transparent text-slate-600 hover:border-secondary hover:text-primary'}`
+      ? 'border-[#215E99] text-[#215E99]'
+      : 'border-transparent text-black hover:border-[#215E99] hover:text-[#215E99]'}`
 
   return (
-    <header className="border-b border-slate-200 bg-background">
+    <header className="border-b border-black/10 bg-white">
       <nav className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8" aria-label="Primary navigation">
         <div className="flex min-h-20 items-center justify-between gap-4">
-          <RouterNavLink to="/" className="flex items-center gap-3 text-primary" aria-label={`${organizationName} home`}>
+          <RouterNavLink to="/" className="flex items-center gap-3 text-[#215E99]" aria-label={`${organizationName} home`}>
             <img src={logo} alt="" className="h-12 w-12 object-contain sm:h-14 sm:w-14" />
             <span className="text-base font-bold tracking-tight sm:text-lg">{organizationName}</span>
           </RouterNavLink>
@@ -42,7 +42,7 @@ export const Navbar = ({ organizationName = ORGANIZATION_NAME }: NavbarProps): R
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-sm p-2 text-primary transition-colors hover:bg-background-muted lg:hidden"
+            className="inline-flex items-center justify-center rounded-sm p-2 text-[#215E99] transition-colors hover:bg-black/5 lg:hidden"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
             aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
@@ -55,10 +55,10 @@ export const Navbar = ({ organizationName = ORGANIZATION_NAME }: NavbarProps): R
         </div>
 
         {isMenuOpen && (
-          <div id="mobile-navigation" className="border-t border-slate-200 py-2 lg:hidden">
+          <div id="mobile-navigation" className="border-t border-black/10 py-2 lg:hidden">
             {NAVIGATION_LINKS.map(({ label, path }) => (
               <RouterNavLink key={path} to={path} end={path === '/'} onClick={() => setIsMenuOpen(false)} className={({ isActive }) =>
-                `block border-l-2 px-4 py-3 text-sm font-semibold transition-colors ${isActive ? 'border-secondary bg-background-muted text-primary' : 'border-transparent text-slate-600 hover:border-secondary hover:bg-background-muted hover:text-primary'}`
+                `block border-l-2 px-4 py-3 text-sm font-semibold transition-colors ${isActive ? 'border-[#215E99] bg-black/5 text-[#215E99]' : 'border-transparent text-black hover:border-[#215E99] hover:bg-black/5 hover:text-[#215E99]'}`
               }>{label}</RouterNavLink>
             ))}
           </div>
