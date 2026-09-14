@@ -40,11 +40,11 @@ interface PartnerItem {
 }
 
 const STATS: HomeStat[] = [
-  { value: '38', label: 'Egyptian Universities' },
-  { value: '380+', label: 'SEPer in the last 5 years' },
-  { value: 'Serving', valueSub: '4,000+', label: 'Pharmacy students yearly' },
-  { value: '4,000+', label: 'member students' },
-  { value: 'Est. 1982', label: 'Serving Pharmacy Students Since 1982' },
+  { value: '2', label: 'Universities' },
+  { value: '20+', label: 'SEPer in last 5 years' },
+  { value: 'Serving', valueSub: '1,000+', label: 'Pharmacy Students yearly' },
+  { value: '300', label: 'Member Students and Graduates' },
+  { value: 'Est. 1998', label: 'Serving Pharmacy Students Since 1998' },
 ]
 
 const FOCUS_AREAS: FocusArea[] = [
@@ -326,21 +326,18 @@ export const Home = (): React.JSX.Element => (
         <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white to-transparent" />
 
-        <div className="flex w-max animate-marquee space-x-6 hover:[animation-play-state:paused] py-4">
+        <div className="flex w-max animate-marquee space-x-8 hover:[animation-play-state:paused] py-4">
           {[...IMPACT_PILLARS, ...IMPACT_PILLARS].map((pillar, idx) => (
             <div
               key={`${pillar.title}-${idx}`}
-              className="flex w-72 flex-col items-center text-center rounded-2xl bg-white p-6 transition-all duration-300 shrink-0 group"
+              className="flex w-56 flex-col items-center text-center p-3 transition-all duration-300 shrink-0 group"
             >
-              <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-blue-50/80 p-3 mb-4 transition-transform duration-300 group-hover:scale-110">
+              <div className="h-20 w-20 flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110">
                 <img src={pillar.icon} alt={pillar.title} className="h-full w-full object-contain" />
               </div>
-              <h3 className="text-sm font-bold text-black mb-2 leading-snug group-hover:text-[#0047ba] transition-colors line-clamp-2">
+              <h3 className="text-sm font-bold text-black leading-snug group-hover:text-[#0047ba] transition-colors line-clamp-2">
                 {pillar.title}
               </h3>
-              <p className="text-xs leading-relaxed text-black/70 line-clamp-3">
-                {pillar.description}
-              </p>
             </div>
           ))}
         </div>
@@ -361,9 +358,9 @@ export const Home = (): React.JSX.Element => (
           {PARTNERS.map(({ name, subtitle, logo }) => (
             <div
               key={name}
-              className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white border border-black/10 shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-1 w-64 group"
+              className="flex flex-col items-center justify-center p-4 transition-all duration-300 hover:-translate-y-1 w-64 group"
             >
-              <div className="h-28 w-28 flex items-center justify-center mb-4 overflow-hidden rounded-full p-2 bg-slate-50 border border-black/5 group-hover:scale-105 transition-transform">
+              <div className="h-28 w-28 flex items-center justify-center mb-4 overflow-hidden rounded-full group-hover:scale-105 transition-transform">
                 <img src={logo} alt={name} className="h-full w-full object-contain rounded-full" />
               </div>
               <h3 className="text-base font-bold text-black group-hover:text-[#0047ba] transition-colors">{name}</h3>
