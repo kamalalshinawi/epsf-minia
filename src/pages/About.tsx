@@ -33,7 +33,7 @@ export const About: React.FC = () => {
         
         {/* Intro Section: Welcome to EPSF-Minia */}
         <section aria-labelledby="welcome-title" className="grid gap-12 lg:grid-cols-12 lg:items-center">
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-6 space-y-6">
             <div className="inline-block rounded-md bg-[#215E99]/10 px-3 py-1 text-xs font-bold text-[#215E99] uppercase tracking-wider">
               Local Chapter
             </div>
@@ -50,8 +50,8 @@ export const About: React.FC = () => {
               As one of EPSF's local associations across 38 universities throughout Egypt, EPSF-Minia conducts all its activities and collaborations in accordance with the official EPSF constitution. We operate within the strategic plan developed every three years by the national and local executive boards, working diligently toward the Key Performance Indicators (KPIs) approved by the General Assembly.
             </p>
           </div>
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="group relative overflow-hidden rounded-2xl border border-[#215E99]/20 bg-white p-3 max-w-md w-full shadow-lg transition-all duration-500 motion-reduce:animate-none animate-float hover:shadow-2xl hover:border-[#215E99]/60 hover:scale-[1.03]">
+          <div className="lg:col-span-6 flex justify-center">
+            <div className="group relative overflow-hidden rounded-2xl border border-[#215E99]/20 bg-white p-4 max-w-xl lg:max-w-2xl w-full shadow-lg transition-all duration-500 motion-reduce:animate-none animate-float hover:shadow-2xl hover:border-[#215E99]/60 hover:scale-[1.03]">
               <img
                 src={pharmacyPassionImg}
                 alt="Pharmacy is our passion"
