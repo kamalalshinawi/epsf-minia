@@ -8,6 +8,10 @@ import bloodDonationImg from '../assets/images/blood-donation.png'
 import environmentImg from '../assets/images/environment.png'
 import pharmacyBookImg from '../assets/images/pharmacy-book.png'
 import interactiveWorkshopImg from '../assets/images/interactive-workshop.png'
+import charityImg from '../assets/images/charity.png'
+import skillGrowthImg from '../assets/images/skill-growth.png'
+import globalNetworkImg from '../assets/images/global-network.png'
+import fipGoalsImg from '../assets/images/fip-goals.png'
 
 interface HomeStat {
   value: string
@@ -91,6 +95,30 @@ const IMPACT_PILLARS: ImpactPillar[] = [
     description:
       'Hosting interactive webinars, national patient counseling competitions, and skill-building sessions.',
     icon: interactiveWorkshopImg,
+  },
+  {
+    title: 'Humanitarian Aid & Relief',
+    description:
+      'Supporting underprivileged families, charity drives, and social welfare programs in Minia.',
+    icon: charityImg,
+  },
+  {
+    title: 'Skill Growth & Leadership',
+    description:
+      'Developing personal capacity, communication skills, and leadership for future pharmacy pioneers.',
+    icon: skillGrowthImg,
+  },
+  {
+    title: 'Global Network & Cultural Exchange',
+    description:
+      'Connecting pharmacy students internationally through IPSF exchanges and global dialogue.',
+    icon: globalNetworkImg,
+  },
+  {
+    title: 'FIP Development Goals',
+    description:
+      'Advancing pharmaceutical practice, policy, and education aligned with International Pharmaceutical Federation standards.',
+    icon: fipGoalsImg,
   },
 ]
 
@@ -242,32 +270,37 @@ export const Home = (): React.JSX.Element => (
       </div>
     </section>
 
-    {/* 5. Developing Pharmacy and Community Section */}
-    <section className="bg-white py-16 sm:py-20 border-b border-black/10">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
-            Developing <span className="text-[#0047ba]">Pharmacy</span> and Community
-          </h2>
-          <p className="mt-3 text-base text-black/70 leading-relaxed">
-            Our core initiatives driving health awareness, educational growth, and sustainable community impact in Minia.
-          </p>
-        </div>
+    {/* 5. Developing Pharmacy and Community Section (Right-to-Left Marquee) */}
+    <section className="bg-white py-16 sm:py-20 border-b border-black/10 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 mb-10 text-center">
+        <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
+          Developing <span className="text-[#0047ba]">Pharmacy</span> and Community
+        </h2>
+        <p className="mt-3 text-base text-black/70 max-w-2xl mx-auto leading-relaxed">
+          Our core initiatives driving health awareness, educational growth, and sustainable community impact in Minia.
+        </p>
+      </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {IMPACT_PILLARS.map(({ title, description, icon }) => (
+      {/* Marquee Ticker Container */}
+      <div className="relative w-full overflow-hidden">
+        {/* Gradient edge masks for smooth fade */}
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white to-transparent" />
+
+        <div className="flex w-max animate-marquee space-x-6 hover:[animation-play-state:paused] py-4">
+          {[...IMPACT_PILLARS, ...IMPACT_PILLARS].map((pillar, idx) => (
             <div
-              key={title}
-              className="flex flex-col items-center text-center rounded-2xl border border-black/10 bg-white p-6 shadow-xs transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#0047ba]/40 group"
+              key={`${pillar.title}-${idx}`}
+              className="flex w-72 flex-col items-center text-center rounded-2xl border border-black/10 bg-white p-6 shadow-xs transition-all duration-300 hover:shadow-lg hover:border-[#0047ba]/40 shrink-0 group"
             >
-              <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-blue-50/80 p-3 mb-5 transition-transform duration-300 group-hover:scale-110">
-                <img src={icon} alt={title} className="h-full w-full object-contain" />
+              <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-blue-50/80 p-3 mb-4 transition-transform duration-300 group-hover:scale-110">
+                <img src={pillar.icon} alt={pillar.title} className="h-full w-full object-contain" />
               </div>
-              <h3 className="text-base font-bold text-black mb-2 leading-snug group-hover:text-[#0047ba] transition-colors">
-                {title}
+              <h3 className="text-sm font-bold text-black mb-2 leading-snug group-hover:text-[#0047ba] transition-colors line-clamp-2">
+                {pillar.title}
               </h3>
-              <p className="text-xs leading-relaxed text-black/70">
-                {description}
+              <p className="text-xs leading-relaxed text-black/70 line-clamp-3">
+                {pillar.description}
               </p>
             </div>
           ))}

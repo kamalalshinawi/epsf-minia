@@ -19,10 +19,15 @@ export default {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
         'hero-enter': 'hero-enter 500ms ease-out both',
         float: 'float 4s ease-in-out infinite',
+        marquee: 'marquee 35s linear infinite',
       },
     },
   },
