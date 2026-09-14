@@ -23,7 +23,7 @@ export const Footer = ({
   phone = '01024526724',
   email = 'amrgamil300@gmail.com',
 }: FooterProps): React.JSX.Element => (
-  <footer className="mt-auto bg-[#215E99] text-white">
+  <footer className="mt-auto bg-[#0A0F0D] text-white">
     <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
       <section aria-labelledby="footer-organization">
         <h2 id="footer-organization" className="text-xl font-extrabold uppercase tracking-wider text-white">{organizationName}</h2>
