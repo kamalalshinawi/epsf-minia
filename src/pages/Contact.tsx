@@ -6,7 +6,7 @@ export const Contact: React.FC = () => {
       <div>
         <h1 className="text-3xl font-bold text-[#215E99]">Contact Us</h1>
         <p className="mt-2 text-black/70">
-          Have questions or want to collaborate with EPSF Minia? Reach out to us below.
+          We'd love to hear from you! Whether you have questions, want to collaborate, or need more information, feel free to reach out to us. Our team is here to assist you with any inquiries regarding our programs, events, and opportunities
         </p>
       </div>
 
