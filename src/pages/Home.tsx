@@ -27,11 +27,6 @@ interface FocusArea {
   image: string
 }
 
-interface StructureItem {
-  title: string
-  description: string
-}
-
 interface ImpactPillar {
   title: string
   description: string
@@ -127,24 +122,6 @@ const IMPACT_PILLARS: ImpactPillar[] = [
     description:
       'Advancing pharmaceutical practice, policy, and education aligned with International Pharmaceutical Federation standards.',
     icon: fipGoalsImg,
-  },
-]
-
-const STRUCTURE_ITEMS: StructureItem[] = [
-  {
-    title: 'Executive Board',
-    description:
-      'The Executive Board provides strategic leadership, administrative governance, and operational supervision for all EPSF-Minia projects and initiatives.',
-  },
-  {
-    title: 'Standing Committees',
-    description:
-      'Dedicated committees manage specialized portfolios, including Public Health, Pharmacy Education, SEP, Professional Development, and Media & IT.',
-  },
-  {
-    title: 'Local Branches & Members',
-    description:
-      'Empowering over 300 member students and pharmacy graduates across Minia University to lead local impact campaigns and nationwide events.',
   },
 ]
 
@@ -329,34 +306,8 @@ export const Home = (): React.JSX.Element => (
       </div>
     </section>
 
-    {/* 6. "Our Structure" Section */}
-    <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10 lg:py-20">
-      <div className="text-center max-w-2xl mx-auto mb-12">
-        <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
-          Our Structure
-        </h2>
-        <p className="mt-3 text-base text-black/70">
-          How EPSF-Minia operates to empower student leadership and deliver impact.
-        </p>
-      </div>
-
-      <div className="grid gap-8 md:grid-cols-3">
-        {STRUCTURE_ITEMS.map(({ title, description }) => (
-          <article
-            key={title}
-            className="rounded-2xl border border-black/10 bg-white p-7 shadow-xs hover:border-[#0047ba]/30 transition-colors"
-          >
-            <h3 className="text-xl font-bold text-[#0047ba]">{title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-black/80">
-              {description}
-            </p>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    {/* 7. Partners and Collaborations Section */}
-    <section className="bg-slate-50/60 py-16 sm:py-20 border-t border-black/10">
+    {/* 6. Partners and Collaborations Section */}
+    <section className="bg-slate-50/60 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 text-center">
         <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
           Partners <span className="text-[#0047ba]">and</span> Collaborations:
@@ -378,26 +329,6 @@ export const Home = (): React.JSX.Element => (
               <p className="text-xs text-black/60 font-medium mt-1">{subtitle}</p>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-
-    {/* 8. Closing CTA Band */}
-    <section className="w-full bg-[#0047ba] text-center text-white py-16 sm:py-20">
-      <div className="mx-auto max-w-3xl px-6">
-        <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-          Get in Touch with EPSF-Minia
-        </h2>
-        <p className="mt-4 text-base sm:text-lg leading-relaxed text-white/90">
-          Whether you are a pharmacy student, partner organization, or community member, we welcome your inquiries and collaboration.
-        </p>
-        <div className="mt-8">
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center rounded-md bg-white px-8 py-3.5 text-sm font-bold text-[#0047ba] shadow-md transition-all hover:bg-white/90"
-          >
-            Contact Us
-          </Link>
         </div>
       </div>
     </section>

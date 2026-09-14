@@ -7,7 +7,7 @@ export const Layout = (): React.JSX.Element => (
   <div className="flex min-h-screen flex-col overflow-x-hidden bg-white text-black">
     <TopBanner />
     <Navbar />
-    <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-12">
+    <main className="mx-auto w-full max-w-7xl flex-1 px-4 sm:px-6 lg:px-8 py-12">
       <Outlet />
     </main>
     <Footer />
