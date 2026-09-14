@@ -17,8 +17,8 @@ import syndicateLogo from '../assets/images/pharmacists-syndicate-logo.jpg'
 
 interface HomeStat {
   value: string
+  valueSub?: string
   label: string
-  sublabel?: string
 }
 
 interface FocusArea {
@@ -40,11 +40,11 @@ interface PartnerItem {
 }
 
 const STATS: HomeStat[] = [
-  { value: '38', label: 'Universities' },
-  { value: '20+', label: 'SEPers', sublabel: 'in last 5 years' },
-  { value: '1,000+', label: 'Pharmacy Students', sublabel: 'Served yearly' },
-  { value: '300', label: 'Members', sublabel: 'Students & Graduates' },
-  { value: 'Est. 1998', label: 'Serving Pharmacy', sublabel: 'Students Since 1998' },
+  { value: '38', label: 'Egyptian Universities' },
+  { value: '380+', label: 'SEPer in the last 5 years' },
+  { value: 'Serving', valueSub: '4,000+', label: 'Pharmacy students yearly' },
+  { value: '4,000+', label: 'member students' },
+  { value: 'Est. 1982', label: 'Serving Pharmacy Students Since 1982' },
 ]
 
 const FOCUS_AREAS: FocusArea[] = [
@@ -140,8 +140,8 @@ const PARTNERS: PartnerItem[] = [
 
 export const Home = (): React.JSX.Element => (
   <div className="-my-12">
-    {/* 1. Hero Section */}
-    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/50 via-white to-white py-16 sm:py-20 lg:py-24">
+    {/* 1. Hero Section (Full Width) */}
+    <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-b from-blue-50/60 via-white to-white py-16 sm:py-20 lg:py-24">
       {/* Decorative concentric background rings */}
       <div className="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
         <div className="h-[600px] w-[600px] rounded-full border border-blue-200/60" />
@@ -178,21 +178,37 @@ export const Home = (): React.JSX.Element => (
       </div>
     </section>
 
-    {/* 2. Stats / Highlights Row */}
-    <section className="mx-auto max-w-7xl px-6 py-10 sm:px-8">
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-        {STATS.map(({ value, label, sublabel }) => (
-          <div
-            key={label}
-            className="flex flex-col items-center justify-center rounded-2xl border border-black/10 bg-white p-6 text-center shadow-xs transition-transform hover:scale-[1.03]"
-          >
-            <span className="text-3xl font-extrabold tracking-tight text-[#0047ba]">
-              {value}
-            </span>
-            <span className="mt-2 text-xs sm:text-sm font-bold text-black">{label}</span>
-            {sublabel && <span className="text-xs text-black/60 mt-0.5">{sublabel}</span>}
-          </div>
-        ))}
+    {/* 2. Stats / Highlights Row — Circular White Bubbles */}
+    <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-b from-white via-blue-50/20 to-white py-12 border-b border-black/5">
+      {/* Decorative background ring behind bubbles matching reference */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-25 pointer-events-none">
+        <div className="h-[700px] w-[700px] rounded-full border border-blue-300" />
+        <div className="absolute h-[500px] w-[500px] rounded-full border border-blue-300" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10">
+          {STATS.map(({ value, valueSub, label }) => (
+            <div
+              key={label}
+              className="flex h-40 w-40 sm:h-44 sm:w-44 lg:h-48 lg:w-48 flex-col items-center justify-center rounded-full border border-slate-100 bg-white p-4 text-center shadow-lg shadow-blue-900/5 transition-all duration-300 hover:scale-105 hover:shadow-xl shrink-0"
+            >
+              {valueSub ? (
+                <>
+                  <span className="text-sm sm:text-base font-extrabold text-black leading-none">{value}</span>
+                  <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-black mt-1">{valueSub}</span>
+                </>
+              ) : (
+                <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-black">
+                  {value}
+                </span>
+              )}
+              <span className="mt-1.5 text-[11px] sm:text-xs font-semibold leading-tight text-black/75 max-w-[130px]">
+                {label}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -306,8 +322,8 @@ export const Home = (): React.JSX.Element => (
       </div>
     </section>
 
-    {/* 6. Partners and Collaborations Section */}
-    <section className="bg-slate-50/60 py-16 sm:py-20">
+    {/* 6. Partners and Collaborations Section (Clean White Background) */}
+    <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 text-center">
         <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
           Partners <span className="text-[#0047ba]">and</span> Collaborations:
