@@ -5,10 +5,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#0B2545',
-        secondary: '#B08D57',
-        background: { DEFAULT: '#FFFFFF', muted: '#F4F5F7' },
-        text: '#1E293B',
+        primary: '#215E99',
+        background: { DEFAULT: '#FFFFFF', muted: '#FFFFFF' },
+        text: '#000000',
       },
       fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
       keyframes: {

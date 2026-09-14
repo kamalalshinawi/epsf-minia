@@ -2,5 +2,5 @@
 @import "tailwindcss";
 
 @layer base {
-  body { @apply m-0 min-w-80 bg-background-muted font-sans text-text antialiased; }
+  body { @apply m-0 min-w-80 bg-white font-sans text-black antialiased; }
 }
